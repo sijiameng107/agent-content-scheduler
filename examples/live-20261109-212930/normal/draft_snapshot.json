@@ -1,0 +1,10 @@
+[
+  {
+    "material_id": "M01",
+    "requested_slot": "2026-11-10T19:00:00+08:00",
+    "proposed_slot": "2026-11-10T20:00:00+08:00",
+    "confirmation_status": "pending_confirmation",
+    "published": false,
+    "active": true
+  }
+]

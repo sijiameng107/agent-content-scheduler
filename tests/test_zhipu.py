@@ -20,6 +20,21 @@ class Tests(unittest.TestCase):
   messages=build_messages(R,[event])
   self.assertEqual(json.loads(messages[3]['content'])['result'],event['observation'])
   self.assertIn('do not retry',messages[-1]['content'])
+ def test_available_requested_slot_cannot_be_arbitrarily_changed(self):
+  with tempfile.TemporaryDirectory() as d:
+   request={'material_ids':['M01'],'requested_slot':F['slots'][1]}
+   t=Tools(F,request,str(Path(d)/'db'));t.read_material('M01');t.check_rules('M01');t.query_slots('M01')
+   result=t.save_draft('M01',F['slots'][2]);self.assertEqual(result['error'],'preferred_slot_available');self.assertEqual(t.db.execute('SELECT count(*) FROM drafts').fetchone()[0],0);t.close()
+ def test_premature_finish_is_returned_to_model(self):
+  class Recover:
+   mode='mock'
+   def __init__(self):self.seen=False
+   def decide(self,r,h):
+    if not h:return {'action':'finish','arguments':{},'decision_summary':'mistaken end'}
+    self.seen=h[-1]['observation'].get('error')=='unfinished_materials'
+    return {'action':'read_material','arguments':{'material_id':'M01'},'decision_summary':'read unfinished item'}
+  with tempfile.TemporaryDirectory() as d:
+   m=Recover();r=run(R,F,m,str(Path(d)/'db'),max_steps=2);self.assertTrue(m.seen);self.assertEqual(r['trace'][1]['action'],'read_material');self.assertEqual(r['status'],'incomplete')
  def test_provider_and_auth(self):
   m=self.model();res=MagicMock();res.__enter__.return_value=io.StringIO(json.dumps({'id':'fake','choices':[{'finish_reason':'stop','message':{'content':json.dumps({'action':'finish','arguments':{},'decision_summary':'done'})}}]}))
   with patch('urllib.request.OpenerDirector.open',return_value=res) as call:
@@ -52,7 +67,7 @@ class Tests(unittest.TestCase):
     assert h[-1]['observation']['found'] is True
     return {'action':'finish','arguments':{},'decision_summary':'end for controller test'}
   with tempfile.TemporaryDirectory() as d:
-   m=RespondingModel();run(R,F,m,str(Path(d)/'db'));self.assertEqual(len(m.seen),2);self.assertEqual(m.seen[1][0]['action'],'read_material')
+   m=RespondingModel();run(R,F,m,str(Path(d)/'db'),max_steps=2);self.assertEqual(len(m.seen),2);self.assertEqual(m.seen[1][0]['action'],'read_material')
  def test_malformed_action_bounded(self):
   class Bad:
    mode='mock'

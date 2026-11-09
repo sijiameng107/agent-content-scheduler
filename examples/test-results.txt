@@ -11,6 +11,7 @@ test_missing (test_agent.Tests.test_missing) ... ok
 test_no_slots (test_agent.Tests.test_no_slots) ... ok
 test_normal (test_agent.Tests.test_normal) ... ok
 test_risk (test_agent.Tests.test_risk) ... ok
+test_available_requested_slot_cannot_be_arbitrarily_changed (test_zhipu.Tests.test_available_requested_slot_cannot_be_arbitrarily_changed) ... ok
 test_failure_retains_proposal (test_zhipu.Tests.test_failure_retains_proposal) ... ok
 test_http_error_redacted (test_zhipu.Tests.test_http_error_redacted) ... ok
 test_invalid_response (test_zhipu.Tests.test_invalid_response) ... ok
@@ -18,11 +19,12 @@ test_malformed_action_bounded (test_zhipu.Tests.test_malformed_action_bounded) .
 test_missing_key_no_fallback (test_zhipu.Tests.test_missing_key_no_fallback) ... ok
 test_observation_drives_next_model_call (test_zhipu.Tests.test_observation_drives_next_model_call) ... ok
 test_permanent_error_presented_without_rewriting (test_zhipu.Tests.test_permanent_error_presented_without_rewriting) ... ok
+test_premature_finish_is_returned_to_model (test_zhipu.Tests.test_premature_finish_is_returned_to_model) ... ok
 test_provider_and_auth (test_zhipu.Tests.test_provider_and_auth) ... ok
 test_saved_result_is_observation_not_next_action (test_zhipu.Tests.test_saved_result_is_observation_not_next_action) ... ok
 test_unsafe_existing_draft_invalidated (test_zhipu.Tests.test_unsafe_existing_draft_invalidated) ... ok
 
 ----------------------------------------------------------------------
-Ran 23 tests in 0.034s
+Ran 25 tests in 0.039s
 
 OK

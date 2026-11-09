@@ -1,0 +1,8 @@
+{
+  "review": true,
+  "save": true,
+  "not_published": true,
+  "workflow_status": true,
+  "draft_count": true,
+  "confirmation": true
+}

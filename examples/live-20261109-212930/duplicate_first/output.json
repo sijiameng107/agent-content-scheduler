@@ -1,0 +1,160 @@
+{
+  "timestamp": "2026-11-09T13:30:16.256127+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 5,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "suggested_slot": "2026-11-10T19:00:00+08:00",
+      "pending_items": [
+        "confirm_alternative:2026-11-10T19:00:00+08:00"
+      ],
+      "draft_save_status": "saved",
+      "published": false,
+      "confirmation_status": "pending_confirmation",
+      "read": true,
+      "queried": true,
+      "available_slots": [
+        "2026-11-10T19:00:00+08:00",
+        "2026-11-10T20:00:00+08:00"
+      ],
+      "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "新品介绍",
+          "text": "了解我们的新产品",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Read material M01 to check its status and slots.",
+      "model_response": {
+        "response_id": "20261109213004ba2c8bd9e70a4861",
+        "usage": {
+          "completion_tokens": 41,
+          "prompt_tokens": 446,
+          "total_tokens": 487
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "review_status": "approved",
+        "missing": [],
+        "risks": []
+      },
+      "decision_summary": "Check rules for material M01 to ensure compliance before scheduling.",
+      "model_response": {
+        "response_id": "202611092130055156f711f3c84b61",
+        "usage": {
+          "completion_tokens": 38,
+          "prompt_tokens": 576,
+          "total_tokens": 614
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "available_slots": [
+          "2026-11-10T19:00:00+08:00",
+          "2026-11-10T20:00:00+08:00"
+        ],
+        "requested_available": false
+      },
+      "decision_summary": "Query available slots for material M01 after confirming it is approved and has no risks.",
+      "model_response": {
+        "response_id": "202611092130082bbafb2bed23423b",
+        "usage": {
+          "completion_tokens": 43,
+          "prompt_tokens": 688,
+          "total_tokens": 731
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "saved": true,
+        "save_status": "saved",
+        "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6",
+        "material_id": "M01",
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "proposed_slot": "2026-11-10T19:00:00+08:00",
+        "confirmation_status": "pending_confirmation",
+        "published": false,
+        "active": true
+      },
+      "decision_summary": "Material M01 is approved and has no risks, but the requested slot is not available. Saving draft at an alternative slot: 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "202611092130092863ac5b6f834983",
+        "usage": {
+          "completion_tokens": 96,
+          "prompt_tokens": 856,
+          "total_tokens": 952
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Draft for material M01 has been saved at an alternative slot and is pending confirmation.",
+      "model_response": {
+        "response_id": "202611092130146a570c4a0df94898",
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 1162,
+          "total_tokens": 1201
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

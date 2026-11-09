@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-11-09T13:29:42.360563+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 3,
+  "items": [
+    {
+      "material_id": "M02",
+      "review_status": "missing_information",
+      "risk_reasons": [],
+      "suggested_slot": null,
+      "pending_items": [
+        "provide:rights"
+      ],
+      "draft_save_status": "not_attempted",
+      "published": false,
+      "confirmation_status": "not_applicable",
+      "read": true
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M02"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "资料不全",
+          "text": "产品展示",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Read material M02 to check its status and slots.",
+      "model_response": {
+        "response_id": "20261109212938399d028fad7a4996",
+        "usage": {
+          "completion_tokens": 41,
+          "prompt_tokens": 446,
+          "total_tokens": 487
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M02"
+      },
+      "observation": {
+        "review_status": "missing_information",
+        "missing": [
+          "rights"
+        ],
+        "risks": []
+      },
+      "decision_summary": "Check rules for material M02 to ensure it can be scheduled.",
+      "model_response": {
+        "response_id": "20261109212940834c3293bd884617",
+        "usage": {
+          "completion_tokens": 43,
+          "prompt_tokens": 569,
+          "total_tokens": 612
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Material M02 has missing rights information and cannot be scheduled.",
+      "model_response": {
+        "response_id": "20261109212941fef1816e7a974574",
+        "usage": {
+          "completion_tokens": 34,
+          "prompt_tokens": 685,
+          "total_tokens": 719
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

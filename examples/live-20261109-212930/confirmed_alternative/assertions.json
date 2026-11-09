@@ -1,0 +1,10 @@
+{
+  "review": false,
+  "save": false,
+  "not_published": true,
+  "workflow_status": false,
+  "draft_count": true,
+  "confirmation": false,
+  "alternative_slot": false,
+  "hard_requirement_preserved": true
+}
