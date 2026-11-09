@@ -1,0 +1,325 @@
+{
+  "timestamp": "2026-11-09T13:20:05.022224+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "incomplete",
+  "reason": "limit_reached",
+  "max_steps": 12,
+  "steps_used": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "suggested_slot": "2026-11-10T19:00:00+08:00",
+      "pending_items": [
+        "confirm_alternative:2026-11-10T19:00:00+08:00"
+      ],
+      "draft_save_status": "saved",
+      "published": false,
+      "confirmation_status": "pending_confirmation",
+      "read": true,
+      "queried": true,
+      "available_slots": [
+        "2026-11-10T19:00:00+08:00",
+        "2026-11-10T20:00:00+08:00"
+      ],
+      "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "新品介绍",
+          "text": "了解我们的新产品",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Material M01 read to check rules and inspect slots.",
+      "model_response": {
+        "response_id": "20261109211936161301e5bb7a4a4c",
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 293,
+          "total_tokens": 342
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "review_status": "approved",
+        "missing": [],
+        "risks": []
+      },
+      "decision_summary": "Material M01 rules checked for potential conflicts.",
+      "model_response": {
+        "response_id": "2026110921193853a25f567e894d3a",
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 434,
+          "total_tokens": 473
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "available_slots": [
+          "2026-11-10T19:00:00+08:00",
+          "2026-11-10T20:00:00+08:00"
+        ],
+        "requested_available": false
+      },
+      "decision_summary": "Material M01 slots inspected for the requested slot 2026-11-10T18:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109211939fa69bffadaf1456a",
+        "usage": {
+          "completion_tokens": 57,
+          "prompt_tokens": 556,
+          "total_tokens": 613
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "saved": true,
+        "save_status": "saved",
+        "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6",
+        "material_id": "M01",
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "proposed_slot": "2026-11-10T19:00:00+08:00",
+        "confirmation_status": "pending_confirmation",
+        "published": false,
+        "active": true
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109211941e1f6c66cf133442f",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 742,
+          "total_tokens": 821
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 5,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "202611092119434f591ca640a64be2",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1019,
+          "total_tokens": 1098
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 6,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109211945ec231c2bece9498d",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1178,
+          "total_tokens": 1257
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 7,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "202611092119479fdddfce8d1e40a4",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1337,
+          "total_tokens": 1416
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 8,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109211949784ef06c6ce34843",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1497,
+          "total_tokens": 1576
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 9,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109211952be758caf90cf45d2",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1655,
+          "total_tokens": 1734
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 10,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "2026110921195443164318f7ca4cbd",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1812,
+          "total_tokens": 1891
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 11,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "202611092119581fcefbb8623f4b3e",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 1971,
+          "total_tokens": 2050
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 12,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, proposing alternative slot 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "20261109212000d62e030e56c14c5d",
+        "usage": {
+          "completion_tokens": 79,
+          "prompt_tokens": 2132,
+          "total_tokens": 2211
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:limit_reached"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

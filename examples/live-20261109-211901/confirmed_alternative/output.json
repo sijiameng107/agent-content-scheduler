@@ -1,0 +1,321 @@
+{
+  "timestamp": "2026-11-09T13:22:49.173255+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "incomplete",
+  "reason": "limit_reached",
+  "max_steps": 12,
+  "steps_used": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "suggested_slot": "2026-11-10T20:00:00+08:00",
+      "pending_items": [],
+      "draft_save_status": "updated",
+      "published": false,
+      "confirmation_status": "confirmed",
+      "read": true,
+      "queried": true,
+      "available_slots": [
+        "2026-11-10T20:00:00+08:00"
+      ],
+      "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "新品介绍",
+          "text": "了解我们的新产品",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Material M01 read to check rules and inspect slots.",
+      "model_response": {
+        "response_id": "20261109212222bfc721776e64450d",
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 315,
+          "total_tokens": 364
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "review_status": "approved",
+        "missing": [],
+        "risks": []
+      },
+      "decision_summary": "Material M01 rules checked for slot conflict.",
+      "model_response": {
+        "response_id": "20261109212223a26a8a821c6e493f",
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 453,
+          "total_tokens": 492
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "available_slots": [
+          "2026-11-10T20:00:00+08:00"
+        ],
+        "requested_available": false
+      },
+      "decision_summary": "Material M01 slots inspected for requested slot 2026-11-10T18:00:00+08:00 and confirmed slot 2026-11-10T20:00:00+08:00.",
+      "model_response": {
+        "response_id": "2026110921222537867f92a78543c2",
+        "usage": {
+          "completion_tokens": 76,
+          "prompt_tokens": 575,
+          "total_tokens": 651
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "saved": true,
+        "save_status": "updated",
+        "draft_id": "db7a83344a9c5cb7f31cb31f7824de49a64fcf5d66f8275ac33400c25a3b22f6",
+        "material_id": "M01",
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "proposed_slot": "2026-11-10T20:00:00+08:00",
+        "confirmation_status": "confirmed",
+        "published": false,
+        "active": true
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "2026110921222803dbdd2930824b03",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 766,
+          "total_tokens": 836
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 5,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "20261109212230ceff9a5ff6b545f5",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1032,
+          "total_tokens": 1102
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 6,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "20261109212233f0f0b273a0e94ffa",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1183,
+          "total_tokens": 1253
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 7,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "202611092122348b9d0838360a433f",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1334,
+          "total_tokens": 1404
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 8,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "202611092122372ea1ba1248374bb1",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1486,
+          "total_tokens": 1556
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 9,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "20261109212240a2d9de89052045ef",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1635,
+          "total_tokens": 1705
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 10,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "2026110921224204b51fc3bd0f4234",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1784,
+          "total_tokens": 1854
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 11,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "20261109212244b89d974fc7be4c97",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 1934,
+          "total_tokens": 2004
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 12,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T20:00:00+08:00"
+      },
+      "observation": {
+        "error": "already_saved_in_this_run",
+        "retryable": false
+      },
+      "decision_summary": "Requested slot is unavailable, but confirmed slot is available. Saving draft at confirmed slot.",
+      "model_response": {
+        "response_id": "20261109212246713f0e05ff5c47bf",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 2085,
+          "total_tokens": 2155
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:limit_reached"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

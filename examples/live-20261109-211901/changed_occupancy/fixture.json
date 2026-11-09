@@ -1,0 +1,42 @@
+{
+  "materials": {
+    "M01": {
+      "title": "新品介绍",
+      "text": "了解我们的新产品",
+      "rights": "owned",
+      "channel": "social"
+    },
+    "M02": {
+      "title": "资料不全",
+      "text": "产品展示",
+      "channel": "social"
+    },
+    "M03": {
+      "title": "风险素材",
+      "text": "保证收益",
+      "rights": "owned",
+      "channel": "social"
+    }
+  },
+  "rules": {
+    "required_fields": [
+      "title",
+      "text",
+      "rights",
+      "channel"
+    ],
+    "blocked_terms": [
+      "保证收益",
+      "绝对安全"
+    ]
+  },
+  "slots": [
+    "2026-11-10T18:00:00+08:00",
+    "2026-11-10T19:00:00+08:00",
+    "2026-11-10T20:00:00+08:00"
+  ],
+  "occupied_slots": [
+    "2026-11-10T18:00:00+08:00",
+    "2026-11-10T19:00:00+08:00"
+  ]
+}

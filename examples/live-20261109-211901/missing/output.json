@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-11-09T13:19:32.552072+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 4,
+  "items": [
+    {
+      "material_id": "M02",
+      "review_status": "missing_information",
+      "risk_reasons": [],
+      "suggested_slot": null,
+      "pending_items": [
+        "provide:rights"
+      ],
+      "draft_save_status": "not_attempted",
+      "published": false,
+      "confirmation_status": "not_applicable",
+      "read": true
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M02"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "资料不全",
+          "text": "产品展示",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Material M02 read to check rules and inspect slots.",
+      "model_response": {
+        "response_id": "202611092119276a6d6034b11e4c80",
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 293,
+          "total_tokens": 342
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M02"
+      },
+      "observation": {
+        "review_status": "missing_information",
+        "missing": [
+          "rights"
+        ],
+        "risks": []
+      },
+      "decision_summary": "Material M02 rules checked for slot conflict.",
+      "model_response": {
+        "response_id": "202611092119280c84ab8548b94650",
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 427,
+          "total_tokens": 466
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 3,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M02"
+      },
+      "observation": {
+        "review_status": "missing_information",
+        "missing": [
+          "rights"
+        ],
+        "risks": []
+      },
+      "decision_summary": "Material M02 has missing rights information, cannot proceed with scheduling.",
+      "model_response": {
+        "response_id": "202611092119300ae69ccbe24d4a7d",
+        "usage": {
+          "completion_tokens": 43,
+          "prompt_tokens": 549,
+          "total_tokens": 592
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Material M02 has missing rights information, cannot proceed with scheduling.",
+      "model_response": {
+        "response_id": "20261109211931722f11679c6d4512",
+        "usage": {
+          "completion_tokens": 35,
+          "prompt_tokens": 675,
+          "total_tokens": 710
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}
