@@ -1,0 +1,26 @@
+test_batch (test_agent.Tests.test_batch) ... ok
+test_bypass (test_agent.Tests.test_bypass) ... ok
+test_changed_occupancy (test_agent.Tests.test_changed_occupancy) ... ok
+test_confirmation (test_agent.Tests.test_confirmation) ... ok
+test_conflict (test_agent.Tests.test_conflict) ... ok
+test_duplicate (test_agent.Tests.test_duplicate) ... ok
+test_early_finish (test_agent.Tests.test_early_finish) ... ok
+test_failed_save (test_agent.Tests.test_failed_save) ... ok
+test_limit (test_agent.Tests.test_limit) ... ok
+test_missing (test_agent.Tests.test_missing) ... ok
+test_no_slots (test_agent.Tests.test_no_slots) ... ok
+test_normal (test_agent.Tests.test_normal) ... ok
+test_risk (test_agent.Tests.test_risk) ... ok
+test_failure_retains_proposal (test_zhipu.Tests.test_failure_retains_proposal) ... ok
+test_http_error_redacted (test_zhipu.Tests.test_http_error_redacted) ... ok
+test_invalid_response (test_zhipu.Tests.test_invalid_response) ... ok
+test_malformed_action_bounded (test_zhipu.Tests.test_malformed_action_bounded) ... ok
+test_missing_key_no_fallback (test_zhipu.Tests.test_missing_key_no_fallback) ... ok
+test_observation_drives_next_model_call (test_zhipu.Tests.test_observation_drives_next_model_call) ... ok
+test_provider_and_auth (test_zhipu.Tests.test_provider_and_auth) ... ok
+test_unsafe_existing_draft_invalidated (test_zhipu.Tests.test_unsafe_existing_draft_invalidated) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.037s
+
+OK

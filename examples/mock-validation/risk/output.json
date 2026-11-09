@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-11-09T13:05:58.666318+00:00",
+  "model_mode": "mock",
+  "model": "scripted-test-double",
+  "provider": "offline",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 3,
+  "items": [
+    {
+      "material_id": "M03",
+      "review_status": "blocked",
+      "risk_reasons": [
+        "blocked_term:保证收益"
+      ],
+      "suggested_slot": null,
+      "pending_items": [],
+      "draft_save_status": "not_attempted",
+      "published": false,
+      "confirmation_status": "not_applicable",
+      "read": true
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M03"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "风险素材",
+          "text": "保证收益",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Offline scripted choice based on last tool observation.",
+      "model_response": {},
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M03"
+      },
+      "observation": {
+        "review_status": "blocked",
+        "missing": [],
+        "risks": [
+          "blocked_term:保证收益"
+        ]
+      },
+      "decision_summary": "Offline scripted choice based on last tool observation.",
+      "model_response": {},
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Offline scenario finished.",
+      "model_response": {},
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}
