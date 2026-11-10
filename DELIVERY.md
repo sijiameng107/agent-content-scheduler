@@ -14,12 +14,11 @@ python3 -m unittest discover -s tests -v
 - 25 项离线单元/边界测试通过，9/9 离线场景通过。
 - 第一次真实模型验收 2/9，第二次 7/9；两个目录保留原始输入、输出、Trace、断言、草稿快照和报告。
 - 第二轮 conflict 第 3 步观察 18:00 冲突，第 4 步建议并保存 19:00 待确认草稿；changed_occupancy 改用 20:00；risk 阻断；save_failure 如实失败并结束。可用于核对动态决策路径。
-- 第二轮 normal 未优先原定空闲时间；confirmed_alternative 提前结束。这两项已修正控制边界并通过离线测试，尚未真实重跑，不能标为 live PASS。
+- 第二轮 normal 未优先原定空闲时间；confirmed_alternative 提前结束。这两项已修正控制边界并通过离线测试，在第三轮通过。
 - 无真实发布、无重复草稿、无真实密钥。全部材料均在本包。
 
 ## 正式提交限制
-原考核要求题号、GitHub URL 和最终 commit SHA。压缩包是完整源码交付物，但不是这一条提交方式的替代品。仓库 https://github.com/sijiameng107/agent-content-scheduler 已创建为私有；推送认证失败，尚无远程代码提交，也未配置评审账号。
-本包附带 LOCAL_COMMIT.txt 记录本地代码版本；它不是已上传 GitHub 的证明。后续只需完成 GitHub 认证、推送，并给予指定评审账号读取权限。
+原考核要求题号、GitHub URL、最终 commit SHA 和指定评审账号读取权限。
 
 ## 文档与证据
 - docs/01-requirements.md：用户、范围和验收标准
@@ -30,3 +29,5 @@ python3 -m unittest discover -s tests -v
 - examples/live-20261109-211901/：第一轮真实运行
 - examples/live-20261109-212930/：第二轮真实运行
 - examples/mock-validation/：当前离线验收
+
+2026-11-10 真实智谱运行 9/9 通过。[完整报告](examples/live-20261110-144836/REPORT.md)。

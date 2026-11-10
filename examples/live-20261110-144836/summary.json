@@ -1,0 +1,136 @@
+{
+  "model_mode": "live",
+  "provider": "zhipu",
+  "model": "glm-4-flash-250414",
+  "expected_cases": 9,
+  "executed_cases": 9,
+  "passed_cases": 9,
+  "complete": true,
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "normal/output.json"
+    },
+    {
+      "case": "missing",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true
+      },
+      "trace": "missing/output.json"
+    },
+    {
+      "case": "risk",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true
+      },
+      "trace": "risk/output.json"
+    },
+    {
+      "case": "conflict",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "alternative_slot": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "conflict/output.json"
+    },
+    {
+      "case": "save_failure",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true
+      },
+      "trace": "save_failure/output.json"
+    },
+    {
+      "case": "duplicate_first",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "duplicate_first/output.json"
+    },
+    {
+      "case": "duplicate_repeat",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "duplicate_repeat/output.json"
+    },
+    {
+      "case": "changed_occupancy",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "alternative_slot": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "changed_occupancy/output.json"
+    },
+    {
+      "case": "confirmed_alternative",
+      "passed": true,
+      "checks": {
+        "review": true,
+        "save": true,
+        "not_published": true,
+        "workflow_status": true,
+        "draft_count": true,
+        "confirmation": true,
+        "alternative_slot": true,
+        "hard_requirement_preserved": true
+      },
+      "trace": "confirmed_alternative/output.json"
+    }
+  ],
+  "limitation": "Review at least two traces for observation-dependent actions; automated assertions alone are insufficient."
+}

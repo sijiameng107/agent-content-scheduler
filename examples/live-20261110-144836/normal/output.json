@@ -1,0 +1,158 @@
+{
+  "timestamp": "2026-11-10T06:48:47.654542+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 5,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "suggested_slot": "2026-11-10T19:00:00+08:00",
+      "pending_items": [],
+      "draft_save_status": "saved",
+      "published": false,
+      "confirmation_status": "confirmed",
+      "read": true,
+      "queried": true,
+      "available_slots": [
+        "2026-11-10T19:00:00+08:00",
+        "2026-11-10T20:00:00+08:00"
+      ],
+      "draft_id": "b942d1abe360b2a6a09824f9e56e82d53666c6e33b9c2eb3df540cbf489d6fd3"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "新品介绍",
+          "text": "了解我们的新产品",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Reading material M01 to determine the next action.",
+      "model_response": {
+        "response_id": "20261110144836d155d45a4468476d",
+        "usage": {
+          "completion_tokens": 40,
+          "prompt_tokens": 513,
+          "total_tokens": 553
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "review_status": "approved",
+        "missing": [],
+        "risks": []
+      },
+      "decision_summary": "Checking rules for material M01 after reading it.",
+      "model_response": {
+        "response_id": "2026111014483975a18564f5d24883",
+        "usage": {
+          "completion_tokens": 36,
+          "prompt_tokens": 642,
+          "total_tokens": 678
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "requested_slot": "2026-11-10T19:00:00+08:00",
+        "available_slots": [
+          "2026-11-10T19:00:00+08:00",
+          "2026-11-10T20:00:00+08:00"
+        ],
+        "requested_available": true
+      },
+      "decision_summary": "Querying available slots for material M01 after confirming it is approved and has no risks.",
+      "model_response": {
+        "response_id": "202611101448411b2197afaf2e4bd4",
+        "usage": {
+          "completion_tokens": 44,
+          "prompt_tokens": 752,
+          "total_tokens": 796
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "saved": true,
+        "save_status": "saved",
+        "draft_id": "b942d1abe360b2a6a09824f9e56e82d53666c6e33b9c2eb3df540cbf489d6fd3",
+        "material_id": "M01",
+        "requested_slot": "2026-11-10T19:00:00+08:00",
+        "proposed_slot": "2026-11-10T19:00:00+08:00",
+        "confirmation_status": "confirmed",
+        "published": false,
+        "active": true
+      },
+      "decision_summary": "The requested slot is available and confirmed, saving draft for material M01.",
+      "model_response": {
+        "response_id": "20261110144843c2230272f2a54041",
+        "usage": {
+          "completion_tokens": 68,
+          "prompt_tokens": 921,
+          "total_tokens": 989
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Material M01 has been successfully saved to the requested slot.",
+      "model_response": {
+        "response_id": "202611101448450507327666794ae1",
+        "usage": {
+          "completion_tokens": 34,
+          "prompt_tokens": 1199,
+          "total_tokens": 1233
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

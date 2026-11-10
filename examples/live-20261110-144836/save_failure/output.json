@@ -1,0 +1,153 @@
+{
+  "timestamp": "2026-11-10T06:49:20.782551+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "failed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 5,
+  "items": [
+    {
+      "material_id": "M01",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "suggested_slot": "2026-11-10T19:00:00+08:00",
+      "pending_items": [
+        "confirm_alternative:2026-11-10T19:00:00+08:00"
+      ],
+      "draft_save_status": "failed",
+      "published": false,
+      "confirmation_status": "pending_confirmation",
+      "read": true,
+      "queried": true,
+      "available_slots": [
+        "2026-11-10T19:00:00+08:00",
+        "2026-11-10T20:00:00+08:00"
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "新品介绍",
+          "text": "了解我们的新产品",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Reading material M01 to determine its status and available slots.",
+      "model_response": {
+        "response_id": "202611101449084a2c54e69c894f7f",
+        "usage": {
+          "completion_tokens": 42,
+          "prompt_tokens": 513,
+          "total_tokens": 555
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "review_status": "approved",
+        "missing": [],
+        "risks": []
+      },
+      "decision_summary": "Checking rules for material M01 to ensure compliance before scheduling.",
+      "model_response": {
+        "response_id": "20261110144912f175ce6d739b4351",
+        "usage": {
+          "completion_tokens": 38,
+          "prompt_tokens": 644,
+          "total_tokens": 682
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "query_slots"
+    },
+    {
+      "step": 3,
+      "action": "query_slots",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "observation": {
+        "requested_slot": "2026-11-10T18:00:00+08:00",
+        "available_slots": [
+          "2026-11-10T19:00:00+08:00",
+          "2026-11-10T20:00:00+08:00"
+        ],
+        "requested_available": false
+      },
+      "decision_summary": "Querying available slots for material M01 after confirming it is approved and has no risks.",
+      "model_response": {
+        "response_id": "20261110144914127e085e4d5a4dbf",
+        "usage": {
+          "completion_tokens": 44,
+          "prompt_tokens": 756,
+          "total_tokens": 800
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "save_draft"
+    },
+    {
+      "step": 4,
+      "action": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "proposed_slot": "2026-11-10T19:00:00+08:00"
+      },
+      "observation": {
+        "error": "save_failed",
+        "retryable": false,
+        "saved": false
+      },
+      "decision_summary": "The requested slot is not available, so proposing an alternative slot: 2026-11-10T19:00:00+08:00.",
+      "model_response": {
+        "response_id": "202611101449171bdcaf31ee6d4a2d",
+        "usage": {
+          "completion_tokens": 84,
+          "prompt_tokens": 925,
+          "total_tokens": 1009
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Save failed for material M01 with retryable set to false, no further action can be taken.",
+      "model_response": {
+        "response_id": "20261110144919e96d75b79b7e4611",
+        "usage": {
+          "completion_tokens": 42,
+          "prompt_tokens": 1103,
+          "total_tokens": 1145
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

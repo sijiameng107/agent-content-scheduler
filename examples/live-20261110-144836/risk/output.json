@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-11-10T06:48:58.858817+00:00",
+  "model_mode": "live",
+  "model": "glm-4-flash-250414",
+  "provider": "zhipu",
+  "tool_mode": "local_synthetic",
+  "status": "completed",
+  "reason": "draft_workflow_finished",
+  "max_steps": 12,
+  "steps_used": 3,
+  "items": [
+    {
+      "material_id": "M03",
+      "review_status": "blocked",
+      "risk_reasons": [
+        "blocked_term:保证收益"
+      ],
+      "suggested_slot": null,
+      "pending_items": [],
+      "draft_save_status": "not_attempted",
+      "published": false,
+      "confirmation_status": "not_applicable",
+      "read": true
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "read_material",
+      "arguments": {
+        "material_id": "M03"
+      },
+      "observation": {
+        "found": true,
+        "material": {
+          "title": "风险素材",
+          "text": "保证收益",
+          "rights": "owned",
+          "channel": "social"
+        }
+      },
+      "decision_summary": "Reading material M03 to determine next steps.",
+      "model_response": {
+        "response_id": "20261110144854ff0868633e9f496b",
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 513,
+          "total_tokens": 552
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "check_rules"
+    },
+    {
+      "step": 2,
+      "action": "check_rules",
+      "arguments": {
+        "material_id": "M03"
+      },
+      "observation": {
+        "review_status": "blocked",
+        "missing": [],
+        "risks": [
+          "blocked_term:保证收益"
+        ]
+      },
+      "decision_summary": "Checking rules for material M03 after reading.",
+      "model_response": {
+        "response_id": "20261110144856bdecd50537844860",
+        "usage": {
+          "completion_tokens": 35,
+          "prompt_tokens": 640,
+          "total_tokens": 675
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {},
+      "observation": {
+        "finished": true
+      },
+      "decision_summary": "Material M03 is blocked due to the term '保证收益'.",
+      "model_response": {
+        "response_id": "20261110144857be6744e33aa7486d",
+        "usage": {
+          "completion_tokens": 36,
+          "prompt_tokens": 755,
+          "total_tokens": 791
+        },
+        "finish_reason": "stop"
+      },
+      "next_action": "stop:draft_workflow_finished"
+    }
+  ],
+  "note": "Drafts only. Mock verifies flow, not real model decisions."
+}

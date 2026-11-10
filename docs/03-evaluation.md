@@ -15,8 +15,6 @@
 
 额外测试包括用户确认、步数上限、跳过审核、非法发布工具、提前结束、无空闲槽位及批量防冲突。重复和更换占用时段测试断言数据库行数保持 1。
 
-真实模型状态：未运行，无 API Key 配置与可用网络验证。必须补充至少两条 live 路径，证明工具观察改变了模型下一步选择；当前 mock 路径不可替代该要求。
-
 已知限制：关键词风险检查不理解完整语义；只支持离散时段；没有多渠道容量、跨批事务、认证确认或真实发布；模型 JSON 解析失败会中止，不自动修复；保存失败可能发生在更新已有草稿时，此时旧草稿仍保留，失败表示本次修改未保存。查询和写入间占用变化会再次检查，真实模型须选择重查。
 
 ## 智谱迁移后的自动验收
@@ -39,3 +37,9 @@
 normal 第 3 步观察到原时间 19:00 空闲，却在第 4 步建议 20:00；confirmed_alternative 在第 1 步提前 finish，没有重新审核与保存。修复为：可用的用户优先时段存在时，拒绝其他时段并反馈 required_slot；未完成必要步骤时，finish 返回 unfinished_materials，模型在剩余预算内自行选择下一步。未降低断言标准，未把历史失败改为通过。25 项离线测试及 9 场景通过；修复后的两项真实效果未重跑。
 
 动态路径证据：[conflict](../examples/live-20261109-212930/conflict/output.json)、[risk](../examples/live-20261109-212930/risk/output.json)、[save_failure](../examples/live-20261109-212930/save_failure/output.json)、[changed_occupancy](../examples/live-20261109-212930/changed_occupancy/output.json)。它们来自真实智谱模型、本地合成业务工具，不是 Mock 模型日志。
+
+## 2026-11-10 真实验收
+
+[完整报告](../examples/live-20261110-144836/REPORT.md)。2026-11-10 真实智谱运行 9/9 通过。
+
+正常素材在规则通过后查询时段并保存草稿（[normal](../examples/live-20261110-144836/normal/output.json)）。风险素材在规则命中后直接结束（[risk](../examples/live-20261110-144836/risk/output.json)）。[conflict](../examples/live-20261110-144836/conflict/output.json) 在原时段冲突后保存替代时段草稿，保留待确认状态。此前两轮的失败仍保存在各自报告中。
